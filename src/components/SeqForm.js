@@ -4,19 +4,21 @@ class SeqForm extends React.Component{
 
   state={
     seq: "",
-    csv: []
+    csv: ""
   }
 
   handleChangeFile = (e) => {
-    this.setState({ [e.target.name]: e.target.value })
+    console.log(e.target.files)
+    this.setState({ [e.target.name]: e.target.files })
   }
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value })
   }
 
-  handleSubmit = () => {
-
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.props.csvToJson(this.state.csv)
   }
 
   render(){
