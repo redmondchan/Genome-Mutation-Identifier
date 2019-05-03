@@ -11,11 +11,12 @@ class Container extends React.Component{
     seq: ""
   }
 
+  // sets the json result after papa parse converts it
   jsonResults = (results) => {
-    console.log(results.data)
     this.setState({results: results.data})
   }
 
+  // searches for the specific sequence in a pool of patients
   searchForSeq = (array, seq) => {
     let filteredResults = []
     array.forEach(obj => {
@@ -29,6 +30,7 @@ class Container extends React.Component{
     return filteredResults
   }
 
+  // converts csv to json and sets the inputted seq into state
   csvToJson = (csv, seq) => {
     let result = []
     console.log(csv)
