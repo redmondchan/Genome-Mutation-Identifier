@@ -18,7 +18,7 @@ class SeqForm extends React.Component{
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.props.csvToJson(this.state.csv)
+    this.props.csvToJson(this.state.csv, this.state.seq)
   }
 
   render(){
