@@ -7,6 +7,7 @@ import InsertionDeletionForm from '../components/InsertionDeletionForm'
 class Container extends React.Component{
 
   state={
+    insertionDeletion: false,
     results: [],
     seq: ""
   }
@@ -31,14 +32,17 @@ class Container extends React.Component{
   }
 
   // converts csv to json and sets the inputted seq into state
-  csvToJson = (csv, seq) => {
+  csvToJson = (csv, seq, boolean) => {
     let result = []
-    console.log(csv)
     Papa.parse(csv[0], {
       header: true,
       complete: this.jsonResults
     })
-    this.setState({seq: seq})
+    this.setState({seq: seq, insertionDeletion: boolean})
+  }
+
+  insertionDeletion = (array) => {
+    console.log("insertion deletion", array)
   }
 
 
@@ -47,8 +51,8 @@ class Container extends React.Component{
       <div>
         Hi
         <SeqForm csvToJson={this.csvToJson}/>
-        <InsertionDeletionForm/>
-        <Results results={this.searchForSeq(this.state.results, this.state.seq)}/>
+        <InsertionDeletionForm csvToJson={this.csvToJson}/>
+        <Results results={this.state.insertionDeletion ? this.insertionDeletion(this.state.results) : this.searchForSeq(this.state.results, this.state.seq)}/>
       </div>
     )
   }

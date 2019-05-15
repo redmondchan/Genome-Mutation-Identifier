@@ -3,6 +3,7 @@ import React from 'react'
 class SeqForm extends React.Component{
 
   state={
+    insertionDeletion: false,
     seq: "",
     csv: ""
   }
@@ -18,7 +19,7 @@ class SeqForm extends React.Component{
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.props.csvToJson(this.state.csv, this.state.seq)
+    this.props.csvToJson(this.state.csv, this.state.seq, this.state.insertionDeletion)
   }
 
   render(){
