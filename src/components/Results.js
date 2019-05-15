@@ -7,24 +7,28 @@ class Results extends React.Component{
     let result = []
     let newResult
     array.forEach(obj => {
-      if(!result.includes(`{"patientId": ${obj.patientId}, "index": []}`)){
-        result.push(`{"patientId": ${obj.patientId}, "index": []}`)
+      if (this.props.insertionDeletion) {
+        if(!result.includes(`{"patientId": ${obj.patientId},  "mutation": "${obj.mutation}", "index": []}`)){
+          result.push(`{"patientId": ${obj.patientId}, "mutation": "${obj.mutation}", "index": []}`)
+        }
+      } else {
+        if(!result.includes(`{"patientId": ${obj.patientId}, "index": []}`)){
+          result.push(`{"patientId": ${obj.patientId}, "index": []}`)
+        }
       }
     })
+
     newResult = result.map(obj => JSON.parse(obj))
-    console.log("before newResult", result, newResult, array)
 
     for(let i=0; i < array.length; i++){
       for(let j=0; j<newResult.length; j++){
         if(newResult[j].patientId === array[i].patientId){
-          console.log("index", array[i].index[0])
           newResult[j].index.push(array[i].index[0])
         }else {
 
         }
       }
     }
-    console.log("newResult", newResult)
     return newResult
   }
 
@@ -37,7 +41,6 @@ class Results extends React.Component{
         Results
         {sortedDivs}
       </div>
-
     )
   }
 }

@@ -88,7 +88,7 @@ class Container extends React.Component{
         Hi
         <SeqForm csvToJson={this.csvToJson}/>
         <InsertionDeletionForm csvToJson={this.csvToJson}/>
-        <Results results={this.state.insertionDeletion ? this.insertionOrDeletion(this.state.seq, this.state.results) : this.searchForSeq(this.state.results, this.state.seq)}/>
+        <Results results={this.state.insertionDeletion ? this.insertionOrDeletion(this.state.seq, this.state.results) : this.searchForSeq(this.state.results, this.state.seq)} insertionDeletion={this.state.insertionDeletion}/>
       </div>
     )
   }
