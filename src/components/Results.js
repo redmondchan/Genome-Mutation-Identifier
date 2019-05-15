@@ -35,7 +35,10 @@ class Results extends React.Component{
   render(){
     let sortedArray = this.sortResults(this.props.results)
     console.log("sortedArray", sortedArray)
-    let sortedDivs = sortedArray.map(obj => <div>Patient {obj.patientId}: Found sequence at {obj.index.join(', ')}</div>)
+    let sortedDivs = this.props.insertionDeletion ?
+    sortedArray.map(obj => <div>Patient {obj.patientId}: Found {obj.mutation} at {obj.index.join(', ')}</div>) :
+    sortedArray.map(obj => <div>Patient {obj.patientId}: Found sequence at {obj.index.join(', ')}</div>)
+
     return(
       <div>
         Results
