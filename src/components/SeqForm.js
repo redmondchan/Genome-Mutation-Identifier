@@ -1,4 +1,8 @@
 import React from 'react'
+import Card from '@material-ui/core/Card'
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
+
 
 class SeqForm extends React.Component{
 
@@ -24,13 +28,19 @@ class SeqForm extends React.Component{
 
   render(){
     return(
-      <div>
+      <Card style={{float: 'left', width: '44%'}}>
         <form onSubmit={this.handleSubmit}>
-          <input type="textarea" name="seq" placeholder="DNA Sequence" onChange={this.handleChange}></input>
-          <input type="file" name="csv" placeholder="CSV File" onChange={this.handleChangeFile}></input>
+          <TextField label="DNA Sequence" variant="outlined" type="textarea" name="seq" onChange={this.handleChange}/>
+          <input label="CSV File" variant="outlined" type="file" name="csv" onChange={this.handleChangeFile}/>
+          <input className="hide-button" id="contained-button-file" type="file"/>
+          <label htmlFor="contained-button-file">
+          <Button variant="contained" component="span" onChange={this.handleChangeFile}>
+          Upload
+          </Button>
+          </label>
           <button>Search</button>
         </form>
-      </div>
+      </Card>
     )
   }
 }
