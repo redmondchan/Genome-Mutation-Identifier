@@ -28,13 +28,11 @@ class Container extends React.Component{
         }
       }
     })
-    console.log(filteredResults)
     return filteredResults
   }
 
   // converts csv to json and sets the inputted seq into state
   csvToJson = (csv, seq, boolean) => {
-    let result = []
     Papa.parse(csv[0], {
       header: true,
       complete: this.jsonResults
@@ -74,15 +72,10 @@ class Container extends React.Component{
         }
       }
     }
-    console.log("insert", results)
     return results
   }
 
-  // <Results results={this.state.insertionDeletion ? this.insertionOrDeletion(this.state.seq, this.state.results) : this.searchForSeq(this.state.results, this.state.seq)}/>
-
-
   render(){
-    this.insertionOrDeletion(this.state.seq, this.state.results)
     return(
       <div>
         Hi

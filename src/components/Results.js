@@ -34,7 +34,8 @@ class Results extends React.Component{
 
   render(){
     let sortedArray = this.sortResults(this.props.results)
-    console.log("sortedArray", sortedArray)
+  
+    //creates divs differently based on boolean value of props
     let sortedDivs = this.props.insertionDeletion ?
     sortedArray.map(obj => <div>Patient {obj.patientId}: Found {obj.mutation} at {obj.index.join(', ')}</div>) :
     sortedArray.map(obj => <div>Patient {obj.patientId}: Found sequence at {obj.index.join(', ')}</div>)
