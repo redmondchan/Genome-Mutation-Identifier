@@ -16,3 +16,7 @@ code {
 .hide-button {
   display: none
 }
+
+.form-input {
+  padding: 1%
+}
