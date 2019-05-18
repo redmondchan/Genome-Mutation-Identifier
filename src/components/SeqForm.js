@@ -2,6 +2,7 @@ import React from 'react'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
+import Fab from '@material-ui/core/Fab'
 import Paper from '@material-ui/core/Paper'
 
 
@@ -45,7 +46,7 @@ class SeqForm extends React.Component{
               </label>
             </div>
             <div className="form-input">
-              <button>Search</button>
+              <Fab variant="extended" size="small" color="primary">Search</Fab>
             </div>
           </form>
         </Paper>
