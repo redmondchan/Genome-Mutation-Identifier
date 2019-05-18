@@ -10,12 +10,14 @@ class SeqForm extends React.Component{
   state={
     insertionDeletion: false,
     seq: "",
-    csv: ""
+    csv: "",
+    buttonValue: "Upload CSV File"
   }
+
 
   handleChangeFile = (e) => {
     console.log(e.target.files)
-    this.setState({ [e.target.name]: e.target.files })
+    this.setState({ [e.target.name]: e.target.files, buttonValue: e.target.files[0].name })
   }
 
   handleChange = (e) => {
@@ -39,7 +41,7 @@ class SeqForm extends React.Component{
             <div className="form-input">
               <input className="hide-button" id="contained-button-file" type="file" name="csv" onChange={this.handleChangeFile}/>
               <label htmlFor="contained-button-file">
-              <Button variant="contained" component="span">Upload CSV File</Button>
+              <Button variant="contained" component="span">{this.state.buttonValue}</Button>
               </label>
             </div>
             <div className="form-input">
