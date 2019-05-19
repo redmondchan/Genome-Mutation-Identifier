@@ -3,6 +3,14 @@ import Papa from 'papaparse'
 import Results from '../components/Results'
 import SeqForm from '../components/SeqForm'
 import InsertionDeletionForm from '../components/InsertionDeletionForm'
+import Grid from '@material-ui/core/Grid'
+import { withStyles } from '@material-ui/core/styles'
+
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+  }
+})
 
 class Container extends React.Component{
 
@@ -76,15 +84,17 @@ class Container extends React.Component{
   }
 
   render(){
+    const { classes } = this.props;
     return(
-      <div>
-        Hi
-        <SeqForm csvToJson={this.csvToJson}/>
-        <InsertionDeletionForm csvToJson={this.csvToJson}/>
-        <Results results={this.state.insertionDeletion ? this.insertionOrDeletion(this.state.seq, this.state.results) : this.searchForSeq(this.state.results, this.state.seq)} insertionDeletion={this.state.insertionDeletion}/>
+      <div className={classes.root}>
+        <Grid container spacing={24}>
+          <SeqForm csvToJson={this.csvToJson}/>
+          <InsertionDeletionForm csvToJson={this.csvToJson}/>
+          <Results results={this.state.insertionDeletion ? this.insertionOrDeletion(this.state.seq, this.state.results) : this.searchForSeq(this.state.results, this.state.seq)} insertionDeletion={this.state.insertionDeletion}/>
+        </Grid>
       </div>
     )
   }
 }
 
-export default Container
+export default withStyles(styles)(Container)

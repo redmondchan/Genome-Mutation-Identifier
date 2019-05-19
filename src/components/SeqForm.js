@@ -3,6 +3,15 @@ import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
+import { withStyles } from '@material-ui/core/styles'
+
+const styles = theme => ({
+  paper: {
+    padding: theme.spacing.unit * 2,
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  }
+});
 
 
 class SeqForm extends React.Component{
@@ -32,9 +41,11 @@ class SeqForm extends React.Component{
   // <input label="CSV File" variant="outlined" type="file" name="csv" onChange={this.handleChangeFile}/>
 
   render(){
+    const { classes } = this.props;
     return(
       <Grid item xs={6}>
-        <Paper>
+        <Paper className={classes.paper}>
+          Find by Sequence
           <form onSubmit={this.handleSubmit}>
             <div className="form-input">
               <TextField label="DNA Sequence" variant="outlined" type="textarea" name="seq" onChange={this.handleChange}/>
@@ -55,4 +66,4 @@ class SeqForm extends React.Component{
   }
 }
 
-export default SeqForm
+export default withStyles(styles)(SeqForm)

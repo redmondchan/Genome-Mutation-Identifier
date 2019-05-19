@@ -4,6 +4,15 @@ import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
 import Fab from '@material-ui/core/Fab'
 import Paper from '@material-ui/core/Paper'
+import { withStyles } from '@material-ui/core/styles'
+
+const styles = theme => ({
+  paper: {
+    padding: theme.spacing.unit * 2,
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  }
+});
 
 class InsertionDeletionForm extends React.Component{
 
@@ -29,9 +38,10 @@ class InsertionDeletionForm extends React.Component{
   }
 
   render(){
+    const { classes } = this.props;
     return(
       <Grid item xs={6}>
-        <Paper>
+        <Paper className={classes.paper}>
           Insertion or Deletion
           <form onSubmit={this.handleSubmit}>
             <div className="form-input">
@@ -53,4 +63,4 @@ class InsertionDeletionForm extends React.Component{
   }
 }
 
-export default InsertionDeletionForm
+export default withStyles(styles)(InsertionDeletionForm)
