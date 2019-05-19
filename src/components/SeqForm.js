@@ -46,7 +46,7 @@ class SeqForm extends React.Component{
               </label>
             </div>
             <div className="form-input">
-              <button>Search</button>
+              <Button type="submit" variant="contained" color="primary">Search</Button>
             </div>
           </form>
         </Paper>
