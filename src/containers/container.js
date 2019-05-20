@@ -86,8 +86,8 @@ class Container extends React.Component{
   render(){
     const { classes } = this.props;
     return(
-      <div className={classes.root}>
-        <Grid container spacing={24}>
+      <div >
+        <Grid container>
           <SeqForm csvToJson={this.csvToJson}/>
           <InsertionDeletionForm csvToJson={this.csvToJson}/>
           <Results results={this.state.insertionDeletion ? this.insertionOrDeletion(this.state.seq, this.state.results) : this.searchForSeq(this.state.results, this.state.seq)} insertionDeletion={this.state.insertionDeletion}/>

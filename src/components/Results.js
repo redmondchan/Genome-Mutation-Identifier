@@ -1,4 +1,21 @@
 import React from 'react'
+import Grid from '@material-ui/core/Grid'
+import Paper from '@material-ui/core/Paper'
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
+import ListItemText from '@material-ui/core/ListItemText'
+import { withStyles } from '@material-ui/core/styles'
+
+const styles = theme => ({
+  root: {
+    width: '100%',
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper
+  },
+  list: {
+    textAlign: 'center'
+  }
+})
 
 class Results extends React.Component{
 
@@ -33,20 +50,30 @@ class Results extends React.Component{
   }
 
   render(){
+
+    const { classes } = this.props
     let sortedArray = this.sortResults(this.props.results)
-  
+
     //creates divs differently based on boolean value of props
     let sortedDivs = this.props.insertionDeletion ?
-    sortedArray.map(obj => <div>Patient {obj.patientId}: Found {obj.mutation} at {obj.index.join(', ')}</div>) :
-    sortedArray.map(obj => <div>Patient {obj.patientId}: Found sequence at {obj.index.join(', ')}</div>)
+    sortedArray.map(obj => <ListItem><ListItemText primary={`Patient ${obj.patientId}: Found ${obj.mutation} at ${obj.index.join(', ')}`}/></ListItem>) :
+    sortedArray.map(obj =>
+      <ListItem className={classes.list}>
+        <ListItemText primary={`Patient ${obj.patientId}: Found sequence at ${obj.index.join(', ')}`}/>
+      </ListItem>
+      )
 
     return(
-      <div>
-        Results
-        {sortedDivs}
-      </div>
+      <Grid item xs={12} >
+        <Paper>
+          <List>
+            Results
+            {sortedDivs}
+          </List>
+        </Paper>
+      </Grid>
     )
   }
 }
 
-export default Results
+export default withStyles(styles)(Results)
