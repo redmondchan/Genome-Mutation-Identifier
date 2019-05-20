@@ -7,11 +7,6 @@ import ListItemText from '@material-ui/core/ListItemText'
 import { withStyles } from '@material-ui/core/styles'
 
 const styles = theme => ({
-  root: {
-    width: '100%',
-    maxWidth: 360,
-    backgroundColor: theme.palette.background.paper
-  },
   list: {
     textAlign: 'center'
   },
@@ -60,7 +55,11 @@ class Results extends React.Component{
 
     //creates divs differently based on boolean value of props
     let sortedDivs = this.props.insertionDeletion ?
-    sortedArray.map(obj => <ListItem><ListItemText primary={`Patient ${obj.patientId}: Found ${obj.mutation} at ${obj.index.join(', ')}`}/></ListItem>) :
+    sortedArray.map(obj =>
+      <ListItem className={classes.list}>
+        <ListItemText primary={`Patient ${obj.patientId}: Found ${obj.mutation} at ${obj.index.join(', ')}`}/>
+      </ListItem>
+      ) :
     sortedArray.map(obj =>
       <ListItem className={classes.list}>
         <ListItemText primary={`Patient ${obj.patientId}: Found sequence at ${obj.index.join(', ')}`}/>

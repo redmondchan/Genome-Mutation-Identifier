@@ -4,13 +4,6 @@ import Results from '../components/Results'
 import SeqForm from '../components/SeqForm'
 import InsertionDeletionForm from '../components/InsertionDeletionForm'
 import Grid from '@material-ui/core/Grid'
-import { withStyles } from '@material-ui/core/styles'
-
-const styles = theme => ({
-  root: {
-    flexGrow: 1,
-  }
-})
 
 class Container extends React.Component{
 
@@ -84,7 +77,6 @@ class Container extends React.Component{
   }
 
   render(){
-    const { classes } = this.props;
     return(
       <div >
         <Grid container>
@@ -97,4 +89,4 @@ class Container extends React.Component{
   }
 }
 
-export default withStyles(styles)(Container)
+export default Container
