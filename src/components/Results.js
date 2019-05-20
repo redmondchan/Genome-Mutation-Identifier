@@ -14,6 +14,10 @@ const styles = theme => ({
   },
   list: {
     textAlign: 'center'
+  },
+  grid: {
+    maxWidth: '99%',
+    margin: '1%'
   }
 })
 
@@ -64,7 +68,7 @@ class Results extends React.Component{
       )
 
     return(
-      <Grid item xs={12} >
+      <Grid item xs={12} className={classes.grid}>
         <Paper>
           <List>
             Results

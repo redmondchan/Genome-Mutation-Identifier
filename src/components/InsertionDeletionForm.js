@@ -11,6 +11,10 @@ const styles = theme => ({
     padding: theme.spacing.unit * 2,
     textAlign: 'center',
     color: theme.palette.text.secondary,
+  },
+  grid: {
+    maxWidth: '48%',
+    margin: '1%'
   }
 });
 
@@ -40,7 +44,7 @@ class InsertionDeletionForm extends React.Component{
   render(){
     const { classes } = this.props;
     return(
-      <Grid item xs={6}>
+      <Grid item xs={6} className={classes.grid}>
         <Paper className={classes.paper}>
           Insertion or Deletion
           <form onSubmit={this.handleSubmit}>
