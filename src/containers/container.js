@@ -25,7 +25,7 @@ class Container extends React.Component{
       for(let i = 0; i < obj.dna.length; i++){
         const n = seq.length
         if(obj.dna.substring(i, i+n) === seq){
-          filteredResults.push({patientId: parseInt(obj.patientId), index: [i]})
+          filteredResults.push({patientId: parseInt(obj.patientId), index: [i+1]})
         }
       }
     })
@@ -59,7 +59,7 @@ class Container extends React.Component{
       if(array[i].dna.length < control.length){
         let n = 0
         if(control.includes(array[i].dna)){
-         results.push({patientId: parseInt(array[i].patientId), mutation: "deletion", index: [8]})
+         results.push({patientId: parseInt(array[i].patientId), mutation: "deletion", index: [array[i].dna.length]})
         } else {
           for(let j=0; j<control.length; j++){
           let x = j + n

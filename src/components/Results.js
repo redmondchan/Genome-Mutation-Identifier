@@ -57,12 +57,12 @@ class Results extends React.Component{
     let sortedDivs = this.props.insertionDeletion ?
     sortedArray.map(obj =>
       <ListItem className={classes.list}>
-        <ListItemText primary={`Patient ${obj.patientId}: Found ${obj.mutation} at ${obj.index.join(', ')}`}/>
+        <ListItemText primary={`Patient ${obj.patientId}: Found ${obj.mutation} after position ${obj.index.join(', ')}`}/>
       </ListItem>
       ) :
     sortedArray.map(obj =>
       <ListItem className={classes.list}>
-        <ListItemText primary={`Patient ${obj.patientId}: Found sequence at ${obj.index.join(', ')}`}/>
+        <ListItemText primary={`Patient ${obj.patientId}: Found sequence at position ${obj.index.join(', ')}`}/>
       </ListItem>
       )
 
