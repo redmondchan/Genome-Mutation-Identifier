@@ -3,6 +3,7 @@ import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
+import Typography from '@material-ui/core/Typography'
 import { withStyles } from '@material-ui/core/styles'
 
 const styles = theme => ({
@@ -45,7 +46,7 @@ class InsertionDeletionForm extends React.Component{
     return(
       <Grid item xs={6} className={classes.grid}>
         <Paper className={classes.paper}>
-          Insertion or Deletion
+          <Typography variant="title">Insertion or Deletion</Typography>
           <form onSubmit={this.handleSubmit}>
             <div className="form-input">
               <TextField label="DNA Sequence" variant="outlined" type="textarea" name="seq" onChange={this.handleChange}/>
