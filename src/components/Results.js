@@ -70,7 +70,7 @@ class Results extends React.Component{
       <Grid item xs={12} className={classes.grid}>
         <Paper>
           <List>
-            Results
+            {sortedArray.length} Results
             {sortedDivs}
           </List>
         </Paper>
