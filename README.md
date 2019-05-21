@@ -20,3 +20,6 @@ Go to the root directory of genome-mutation-identifier and run ```npm install```
 
 ## Usage
 After installing dependencies, go to to the root directory and run ```npm start``` to start the application.
+
+## Demo
+A demo of this project has been deployed on Heroku. [Demo](https://genome-mutation-identifier.herokuapp.com/)
