@@ -14,6 +14,10 @@ Here is the repo for the hackathon project: https://github.com/ParmeJon/genome-s
 * Search for a specific sequence within the data
 * Identify insertion or deletion mutations based on an inputted DNA sequence
 
+![find by sequence gif](find_by_sequence.gif)
+
+![insertion or deletion gif](insertion_or_deletion.gif)
+
 ## Setup
 Clone this repo.
 Go to the root directory of genome-mutation-identifier and run ```npm install``` to install dependencies.
