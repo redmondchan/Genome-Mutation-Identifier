@@ -7,7 +7,7 @@ Problem: How can you search for through a set of patient genomic data set to fin
 
 Solution: A lot of early understanding of the molecular pathway requires finding a single point mutation in the genome(specifically for rare disease). If researchers could find this point mutation in a cohort of patients, they could identify a key or inhibitor of that gene and potentially cure that disease. Create an app that can ingest genomic data sets for rare disease patients and find the single point mutation within those cohorts of patients.
 
-Here is the repo for the hackathon project: https://github.com/ParmeJon/genome-sequence-identifier
+This is the [repo](https://github.com/ParmeJon/genome-sequence-identifier) for the hackathon project.
 
 ## Features
 * Ability to upload a CSV file of patient data
